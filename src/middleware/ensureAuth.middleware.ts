@@ -27,6 +27,7 @@ const ensureAuthMiddle = async (
     req.user = {
       isAdm: decoded.isAdm,
       id: decoded.sub,
+      isActive: decoded.isActive,
     };
 
     return next();

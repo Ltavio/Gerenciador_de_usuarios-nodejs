@@ -28,6 +28,7 @@ const sessionUserService = async ({
   const token = jwt.sign(
     {
       isAdm: user.isAdm,
+      isActive: user.isActive,
     },
     process.env.SECRET_KEY as string,
     {
