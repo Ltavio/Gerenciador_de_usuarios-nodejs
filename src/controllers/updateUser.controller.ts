@@ -7,7 +7,7 @@ const updateUserController = async (req: Request, res: Response) => {
   try {
     const data: IUserUpdate = req.body;
     const id: string = req.params.id;
-    const userUpdate = await updateUserService(data, id);
+    const userUpdate = await updateUserService(data, id, req);
     if (userUpdate instanceof User) {
       return res.json(userUpdate);
     }

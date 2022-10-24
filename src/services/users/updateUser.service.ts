@@ -2,10 +2,12 @@ import { IUserUpdate } from "../../interfaces/users";
 import AppDataSource from "../../data-source";
 import User from "../../entities/user.entity";
 import { hash } from "bcrypt";
+import { Request } from "express";
 
 const updateUserService = async (
   { name, email, password }: IUserUpdate,
-  id: string
+  id: string,
+  req: Request
 ): Promise<User | Array<string | number>> => {
   const userRepo = AppDataSource.getRepository(User);
 
@@ -16,8 +18,9 @@ const updateUserService = async (
   if (!findUser) {
     return [404, "user not found"];
   }
-  if (!findUser.isAdm) {
-    if (id === findUser.id) {
+
+  if (!req.user.isAdm) {
+    if (id === req.user.id) {
       await userRepo.update(id, {
         name: name ? name : findUser.name,
         email: email ? email : findUser.email,

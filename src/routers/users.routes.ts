@@ -18,7 +18,7 @@ usersRouter.get(
   listUsersController
 );
 usersRouter.patch("/:id", ensureAuthMiddle, updateUserController);
-usersRouter.patch(
+usersRouter.delete(
   "/:id",
   ensureAuthMiddle,
   ensureIsAdmAuthMiddle,
