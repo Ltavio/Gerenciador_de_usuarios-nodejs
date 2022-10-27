@@ -11,7 +11,7 @@ const sessionController = async (req: Request, res: Response) => {
     return res.json({ token });
   } catch (error) {
     if (error instanceof Error) {
-      return res.status(400).json({ message: error.message });
+      return res.status(403).json({ message: error.message });
     }
   }
 };

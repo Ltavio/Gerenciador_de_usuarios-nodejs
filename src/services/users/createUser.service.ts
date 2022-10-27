@@ -18,7 +18,6 @@ const createUserService = async ({
     email,
     password: hashedPassword,
     isAdm,
-    isActive: true,
   });
 
   await userRepo.save(user);

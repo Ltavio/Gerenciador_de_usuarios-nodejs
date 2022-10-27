@@ -8,7 +8,7 @@ const createUserController = async (req: Request, res: Response) => {
     const data: IUserRequest = req.body;
     const users = await createUserService(data);
 
-    return res.status(200).json(instanceToPlain(users));
+    return res.status(201).json(instanceToPlain(users));
   } catch (error) {
     if (error instanceof Error) {
       return res.status(400).json({ message: error.message });

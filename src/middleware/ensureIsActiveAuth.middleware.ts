@@ -10,7 +10,7 @@ const ensureIsActiveAuthMiddle = (
     return res.status(403).json({ message: "inactive user" });
   }
 
-  return next;
+  return next();
 };
 
 export default ensureIsActiveAuthMiddle;

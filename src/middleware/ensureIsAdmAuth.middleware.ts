@@ -11,6 +11,8 @@ const ensureIsAdmAuthMiddle = async (
     return res.status(403).json({ message: "User is not admin" });
   }
 
+  console.log("passou no isAdm");
+
   return next();
 };
 

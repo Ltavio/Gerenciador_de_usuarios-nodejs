@@ -25,14 +25,14 @@ class User {
   @Column()
   isAdm: boolean;
 
-  @Column()
-  isActive: boolean;
+  @Column({ default: true })
+  isActive: boolean = true;
 
   @CreateDateColumn()
   createdAt: Date;
 
   @UpdateDateColumn()
-  updateAt: Date;
+  updatedAt: Date;
 }
 
 export default User;

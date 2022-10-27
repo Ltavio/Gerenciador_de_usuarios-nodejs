@@ -15,11 +15,11 @@ const ensureAuthMiddle = async (
     });
   }
 
-  token = token.split(" ")[0];
+  token = token.split(" ")[1];
 
   jwt.verify(token, process.env.SECRET_KEY as string, (error, decoded: any) => {
     if (error) {
-      return res.status(401).json({
+      return res.status(403).json({
         message: "Invalid token",
       });
     }
