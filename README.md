@@ -19,7 +19,7 @@ Nesse projeto foi desenvolvido um serviço de back-end responsável por gerencia
 - express-async-errors
 - pg
 
-### Para inicializar a aplicação:
+## Para inicializar a aplicação:
 
 ````
 yarn dev
